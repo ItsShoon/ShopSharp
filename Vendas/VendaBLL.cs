@@ -8,5 +8,17 @@ namespace ShopSharp.Vendas
 {
     public class VendaBLL
     {
+        private readonly VendaDAL vendaDAL;
+
+        public VendaBLL(VendaDAL vendaDAL)
+        {
+            this.vendaDAL = vendaDAL;
+        }
+
+        public List<Venda> ListarVendas()
+        {
+            return vendaDAL.LerVendas();
+            // Ou, se preferir, você pode adicionar lógica de negócios adicional aqui antes de retornar as vendas.
+        }
     }
 }
