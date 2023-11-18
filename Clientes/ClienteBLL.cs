@@ -11,16 +11,28 @@ namespace ShopSharp.Clientes
     {
         private readonly ClienteDAL clienteDAL;
 
+        /// <summary>
+        /// Construtor da classe ClienteBLL.
+        /// </summary>
+        /// <param name="clienteDAL">Instância da classe ClienteDAL.</param>
         public ClienteBLL(ClienteDAL clienteDAL)
         {
             this.clienteDAL = clienteDAL;
         }
 
+        /// <summary>
+        /// Lista todos os clientes existentes no sistema.
+        /// </summary>
+        /// <returns>Uma lista de objetos Cliente.</returns>
         public List<Cliente> ListarClientes()
         {
             return clienteDAL.LerClientes();
         }
 
+        /// <summary>
+        /// Adiciona um novo cliente ao sistema.
+        /// </summary>
+        /// <param name="novoCliente">O cliente a ser adicionado.</param>
         public void AdicionarCliente(Cliente novoCliente)
         {
             List<Cliente> clientes = clienteDAL.LerClientes();
@@ -28,6 +40,11 @@ namespace ShopSharp.Clientes
             clienteDAL.GravarClientes(clientes);
         }
 
+        /// <summary>
+        /// Edita um cliente existente no sistema.
+        /// </summary>
+        /// <param name="clienteId">O ID do cliente a ser editado.</param>
+        /// <param name="clienteEditado">O cliente com as alterações.</param>
         public void EditarCliente(int clienteId, Cliente clienteEditado)
         {
             List<Cliente> clientes = clienteDAL.LerClientes();
@@ -51,6 +68,10 @@ namespace ShopSharp.Clientes
             }
         }
 
+        /// <summary>
+        /// Remove um cliente do sistema com base no ID.
+        /// </summary>
+        /// <param name="clienteId">O ID do cliente a ser removido.</param>
         public void RemoverCliente(int clienteId)
         {
             List<Cliente> clientes = clienteDAL.LerClientes();

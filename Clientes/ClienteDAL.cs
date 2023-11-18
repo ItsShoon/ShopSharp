@@ -12,6 +12,10 @@ namespace ShopSharp.Clientes
     {
         private const string clienteFilePath = "clientes.json";
 
+        /// <summary>
+        /// Lê os clientes do armazenamento persistente.
+        /// </summary>
+        /// <returns>Uma lista de objetos Cliente.</returns>
         public List<Cliente> LerClientes()
         {
             List<Cliente> clientes;
@@ -29,6 +33,10 @@ namespace ShopSharp.Clientes
             return clientes;
         }
 
+        /// <summary>
+        /// Grava os clientes no armazenamento persistente.
+        /// </summary>
+        /// <param name="clientes">A lista de clientes a ser gravada.</param>
         public void GravarClientes(List<Cliente> clientes)
         {
             string jsonConteudo = JsonConvert.SerializeObject(clientes, Formatting.Indented);

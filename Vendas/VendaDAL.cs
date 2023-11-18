@@ -11,6 +11,10 @@ namespace ShopSharp.Vendas
     {
         private const string vendaFilePath = "vendas.json";
 
+        /// <summary>
+        /// Lê as vendas do armazenamento persistente.
+        /// </summary>
+        /// <returns>Uma lista de objetos Venda.</returns>
         public List<Venda> LerVendas()
         {
             List<Venda> vendas;
@@ -28,6 +32,10 @@ namespace ShopSharp.Vendas
             return vendas;
         }
 
+        /// <summary>
+        /// Grava as vendas no armazenamento persistente.
+        /// </summary>
+        /// <param name="vendas">A lista de vendas a ser gravada.</param>
         public void GravarVendas(List<Venda> vendas)
         {
             string jsonConteudo = JsonConvert.SerializeObject(vendas, Formatting.Indented);
