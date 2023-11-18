@@ -53,7 +53,6 @@ namespace ShopSharp.Clientes
 
         public void RemoverCliente(int clienteId)
         {
-            // Aqui você pode adicionar lógica de validação antes de remover o cliente
             List<Cliente> clientes = clienteDAL.LerClientes();
 
             Cliente clienteParaRemover = clientes.Find(c => c.ClienteId == clienteId);

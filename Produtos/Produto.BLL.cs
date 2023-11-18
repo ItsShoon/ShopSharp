@@ -19,13 +19,11 @@ namespace ShopSharp.Produtos
 
         public List<Produto> ListarProdutos()
         {
-            // Aqui você pode adicionar lógica de negócios adicional, se necessário
             return produtoDAL.LerProdutos();
         }
 
         public void AdicionarProduto(Produto novoProduto)
         {
-            // Aqui você pode adicionar lógica de validação antes de adicionar o produto
             List<Produto> produtos = produtoDAL.LerProdutos();
             produtos.Add(novoProduto);
             produtoDAL.GravarProdutos(produtos);
@@ -33,14 +31,13 @@ namespace ShopSharp.Produtos
 
         public void EditarProduto(int produtoId, Produto produtoEditado)
         {
-            // Aqui você pode adicionar lógica de validação antes de editar o produto
             List<Produto> produtos = produtoDAL.LerProdutos();
 
             Produto produtoExistente = produtos.Find(p => p.ProdutoId == produtoId);
 
             if (produtoExistente != null)
             {
-                // Atualizar os atributos do produto existente com os do produto editado
+                // Atualiza os atributos do produto existente com os do produto editado
                 produtoExistente.Nome = produtoEditado.Nome;
                 produtoExistente.Preco = produtoEditado.Preco;
                 produtoExistente.Stock = produtoEditado.Stock;
@@ -48,7 +45,6 @@ namespace ShopSharp.Produtos
                 produtoExistente.GarantiaMeses = produtoEditado.GarantiaMeses;
                 produtoExistente.Tipo = produtoEditado.Tipo;
 
-                // Lógica de validação adicional, se necessário
 
                 produtoDAL.GravarProdutos(produtos);
             }
@@ -60,7 +56,6 @@ namespace ShopSharp.Produtos
 
         public void RemoverProduto(int produtoId)
         {
-            // Aqui você pode adicionar lógica de validação antes de remover o produto
             List<Produto> produtos = produtoDAL.LerProdutos();
 
             Produto produtoParaRemover = produtos.Find(p => p.ProdutoId == produtoId);

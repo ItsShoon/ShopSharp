@@ -18,7 +18,6 @@ namespace ShopSharp.Vendas
         public List<Venda> ListarVendas()
         {
             return vendaDAL.LerVendas();
-            // Ou, se preferir, você pode adicionar lógica de negócios adicional aqui antes de retornar as vendas.
         }
     }
 }
