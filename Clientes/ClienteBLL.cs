@@ -89,5 +89,19 @@ namespace ShopSharp.Clientes
             }
         }
 
+        /// <summary>
+        /// Obtém um cliente com base no ID.
+        /// </summary>
+        /// <param name="clienteId">O ID do cliente a ser obtido.</param>
+        /// <returns>O objeto Cliente correspondente ao ID fornecido, ou null se não encontrado.</returns>
+        public Cliente ObterClientePorId(int clienteId)
+        {
+            // Obtém a lista de clientes do armazenamento persistente
+            List<Cliente> clientes = clienteDAL.LerClientes();
+
+            // Procura o cliente com o ID correspondente
+            return clientes.Find(c => c.ClienteId == clienteId);
+        }
+
     }
 }

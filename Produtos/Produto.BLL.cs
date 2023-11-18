@@ -92,5 +92,19 @@ namespace ShopSharp.Produtos
             }
         }
 
+        /// <summary>
+        /// Obtém um produto com base no seu ID.
+        /// </summary>
+        /// <param name="produtoId">O ID do produto a ser obtido.</param>
+        /// <returns>O objeto Produto correspondente ao ID fornecido, ou null se não encontrado.</returns>
+        public Produto ObterProdutoPorId(int produtoId)
+        {
+            // Obtém a lista atual de produtos do armazenamento persistente
+            List<Produto> produtos = produtoDAL.LerProdutos();
+
+            // Procura o produto com o ID fornecido na lista
+            return produtos.Find(p => p.ProdutoId == produtoId);
+        }
+
     }
 }
