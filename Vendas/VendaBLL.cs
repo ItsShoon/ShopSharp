@@ -22,7 +22,6 @@ namespace ShopSharp.Vendas
 
         public void AdicionarVenda(Venda novaVenda)
         {
-            
             List<Venda> vendas = vendaDAL.LerVendas();
             vendas.Add(novaVenda);
             vendaDAL.GravarVendas(vendas);
