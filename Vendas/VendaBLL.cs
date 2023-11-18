@@ -19,5 +19,13 @@ namespace ShopSharp.Vendas
         {
             return vendaDAL.LerVendas();
         }
+
+        public void AdicionarVenda(Venda novaVenda)
+        {
+            // Aqui você pode adicionar lógica de validação antes de adicionar a venda
+            List<Venda> vendas = vendaDAL.LerVendas();
+            vendas.Add(novaVenda);
+            vendaDAL.GravarVendas(vendas);
+        }
     }
 }
