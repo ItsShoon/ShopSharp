@@ -181,9 +181,7 @@ internal class Program
             Console.WriteLine($"Morada: {cliente.Morada}");
             Console.WriteLine($"NIF: {cliente.NIF}");
 
-            // Adicione outras propriedades conforme necessário
-
-            Console.WriteLine(); // Adiciona uma linha em branco entre os clientes para melhor legibilidade
+            Console.WriteLine(); // Adiciona uma linha em branco
         }
     }
 
@@ -201,7 +199,7 @@ internal class Program
         Console.Write("Insira o ID do cliente a ser editado: ");
         int clienteId = int.Parse(Console.ReadLine());
 
-        Cliente clienteEditado = CriarNovoCliente(); // Assumindo que este método cria um novo cliente
+        Cliente clienteEditado = CriarNovoCliente();
         clienteBLL.EditarCliente(clienteId, clienteEditado);
         Console.WriteLine("Cliente editado com sucesso!");
     }
@@ -233,10 +231,10 @@ internal class Program
         Console.Write("NIF: ");
         string nif = Console.ReadLine();
 
-        // A lógica a seguir permite escolher entre ClientePrivado e ClienteEmpresarial
+        // Permite escolher entre ClientePrivado e ClienteEmpresarial
         Console.Write("Tipo de cliente (P para privado, E para empresarial): ");
         char tipoCliente = char.ToUpper(Console.ReadKey().KeyChar);
-        Console.WriteLine(); // Nova linha para organização
+        Console.WriteLine();
 
         if (tipoCliente == 'P')
         {
@@ -337,7 +335,7 @@ internal class Program
 
         Console.Write("Tipo (H para Hardware, S para Software, G para Gadget Eletrónico): ");
         char tipoProduto = char.ToUpper(Console.ReadKey().KeyChar);
-        Console.WriteLine(); // Nova linha para organização
+        Console.WriteLine();
 
         TipoProduto tipo;
 
@@ -378,7 +376,7 @@ internal class Program
             Console.WriteLine($"Produto Vendido: {venda.ProdutoVendido.Nome}");
             Console.WriteLine($"Quantidade: {venda.Quantidade}");
             Console.WriteLine($"Total: {venda.Total:C}");
-            Console.WriteLine(); // Adiciona uma linha em branco entre as vendas para melhor legibilidade
+            Console.WriteLine(); // Adiciona uma linha em branco
         }
     }
 
@@ -418,10 +416,9 @@ internal class Program
             ProdutoVendido = produto,
             Quantidade = quantidade,
             DataVenda = DateTime.Now,
-            Total = produto.Preco * quantidade // Assume que o preço do produto está correto
+            Total = produto.Preco * quantidade
         };
 
-        // Adicionar a nova venda
         vendaBLL.AdicionarVenda(novaVenda);
 
         Console.WriteLine("Venda adicionada com sucesso!");

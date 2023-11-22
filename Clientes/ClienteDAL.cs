@@ -13,7 +13,7 @@ namespace ShopSharp.Clientes
         private const string clienteFilePath = "clientes.json";
 
         /// <summary>
-        /// Lê os clientes do armazenamento persistente.
+        /// Lê os clientes do armazenamento.
         /// </summary>
         /// <returns>Uma lista de objetos Cliente.</returns>
         public List<Cliente> LerClientes()
@@ -34,7 +34,7 @@ namespace ShopSharp.Clientes
         }
 
         /// <summary>
-        /// Grava os clientes no armazenamento persistente.
+        /// Grava os clientes no armazenamento.
         /// </summary>
         /// <param name="clientes">A lista de clientes a ser gravada.</param>
         public void GravarClientes(List<Cliente> clientes)

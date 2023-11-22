@@ -34,9 +34,9 @@ namespace ShopSharp.Vendas
         /// <param name="novaVenda">A venda a ser adicionada.</param>
         /// <remarks>
         /// Este método realiza as seguintes operações:
-        /// - Obtém a lista atual de vendas do armazenamento persistente.
+        /// - Obtém a lista atual de vendas do armazenamento.
         /// - Adiciona a nova venda à lista existente.
-        /// - Grava a lista atualizada de volta no armazenamento persistente.
+        /// - Grava a lista atualizada de volta no armazenamento.
         /// </remarks>
         public void AdicionarVenda(Venda novaVenda)
         {

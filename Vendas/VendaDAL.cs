@@ -12,7 +12,7 @@ namespace ShopSharp.Vendas
         private const string vendaFilePath = "vendas.json";
 
         /// <summary>
-        /// Lê as vendas do armazenamento persistente.
+        /// Lê as vendas do armazenamento.
         /// </summary>
         /// <returns>Uma lista de objetos Venda.</returns>
         public List<Venda> LerVendas()
@@ -33,7 +33,7 @@ namespace ShopSharp.Vendas
         }
 
         /// <summary>
-        /// Grava as vendas no armazenamento persistente.
+        /// Grava as vendas no armazenamento.
         /// </summary>
         /// <param name="vendas">A lista de vendas a ser gravada.</param>
         public void GravarVendas(List<Venda> vendas)
